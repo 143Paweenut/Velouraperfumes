@@ -33,7 +33,6 @@ if ($result) {
 
 /* =====================================================
    ดึงสินค้าใหม่ล่าสุดจากฐานข้อมูล
-   ใช้สำหรับโฆษณา Slide ที่ 3
 ===================================================== */
 $new_product = null;
 
@@ -50,7 +49,7 @@ if ($result_new && $result_new->num_rows > 0) {
 
 
 /* =====================================================
-   เตรียมข้อมูลสินค้าใหม่สำหรับแสดงผล
+   เตรียมข้อมูลสินค้าใหม่
 ===================================================== */
 
 $new_product_name = "New Signature";
@@ -91,8 +90,14 @@ if ($new_product) {
 
 <title>Veloura Perfumes | Luxury Fragrance</title>
 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap"
@@ -255,7 +260,6 @@ a{
     content:"";
 
     position:absolute;
-
     top:0;
     left:-20%;
 
@@ -319,11 +323,8 @@ nav{
 .logo:before,
 .logo:after{
     content:"✦";
-
     position:absolute;
-
     color:#d28da2;
-
     font-size:10px;
     top:3px;
 }
@@ -364,20 +365,15 @@ nav{
 
 .nav-links{
     display:flex;
-
     align-items:center;
-
     gap:27px;
 }
 
 .nav-links a,
 .nav-right a{
     font-size:12px;
-
     color:#62545a;
-
     transition:.3s;
-
     position:relative;
 }
 
@@ -412,9 +408,7 @@ nav{
 
 .nav-right{
     display:flex;
-
     align-items:center;
-
     gap:20px;
 }
 
@@ -444,7 +438,6 @@ nav{
     font:10px "Montserrat";
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
@@ -531,7 +524,9 @@ nav{
 
     letter-spacing:10px;
 
-    text-shadow:0 2px 12px rgba(110,60,77,.25);
+    text-shadow:
+        0 2px 12px
+        rgba(110,60,77,.25);
 
     animation:floatSparkle 3s ease-in-out infinite;
 }
@@ -610,7 +605,11 @@ nav{
 }
 
 .hero h1{
-    font:500 clamp(50px,5vw,78px)/.88 "Cormorant Garamond",serif;
+    font:
+        500
+        clamp(50px,5vw,78px)/.88
+        "Cormorant Garamond",
+        serif;
 
     color:#33282c;
 
@@ -619,7 +618,6 @@ nav{
 
 .hero h1 em{
     font-weight:400;
-
     color:#b66f86;
 }
 
@@ -652,7 +650,6 @@ nav{
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     width:200px;
@@ -673,12 +670,13 @@ nav{
 
     transition:.35s;
 
-    box-shadow:0 12px 28px rgba(63,42,50,.16);
+    box-shadow:
+        0 12px 28px
+        rgba(63,42,50,.16);
 }
 
 .shop-button i{
     margin-left:12px;
-
     font-size:9px;
 }
 
@@ -691,7 +689,9 @@ nav{
 
     transform:translateY(-4px);
 
-    box-shadow:0 15px 30px rgba(169,97,120,.25);
+    box-shadow:
+        0 15px 30px
+        rgba(169,97,120,.25);
 }
 
 .hero-note{
@@ -759,41 +759,24 @@ nav{
 ===================================================== */
 
 .collection{
-
     background:#fff;
 
     padding:25px 7% 100px;
 }
 
-
-/* 
-   ลดขนาดพื้นที่ของสินค้า
-   จากเดิม 1120px
-   เหลือประมาณ 760px
-*/
-
 .products{
-
     display:grid;
 
-    grid-template-columns:repeat(3, 240px);
+    grid-template-columns:repeat(3,1fr);
 
-    gap:24px;
+    gap:30px;
 
-    max-width:760px;
+    max-width:1120px;
 
     margin:auto;
-
-    justify-content:center;
 }
 
-
-/* =====================================================
-   PRODUCT CARD
-===================================================== */
-
 .product{
-
     display:block;
 
     position:relative;
@@ -804,12 +787,11 @@ nav{
 }
 
 .product:after{
-
     content:"";
 
     position:absolute;
 
-    inset:-8px;
+    inset:-10px;
 
     border-radius:4px;
 
@@ -827,26 +809,15 @@ nav{
 }
 
 .product:hover{
-
     transform:translateY(-7px);
 }
 
 .product:hover:after{
-
     opacity:1;
 }
 
-
-/* =====================================================
-   PRODUCT IMAGE
-   ลดขนาดรูปจากเดิม
-===================================================== */
-
 .product-image{
-
-    aspect-ratio:4/4.5;
-
-    width:100%;
+    aspect-ratio:4/5;
 
     background:#f7eef1;
 
@@ -857,22 +828,21 @@ nav{
     z-index:1;
 
     box-shadow:
-        0 10px 24px
+        0 12px 28px
         rgba(95,57,70,.08);
 }
 
 .product-image:after{
-
     content:"✧";
 
     position:absolute;
 
-    right:13px;
-    bottom:11px;
+    right:15px;
+    bottom:13px;
 
     color:#fff;
 
-    font-size:17px;
+    font-size:20px;
 
     opacity:.8;
 
@@ -884,7 +854,6 @@ nav{
 }
 
 .product-image img{
-
     width:100%;
     height:100%;
 
@@ -896,29 +865,22 @@ nav{
 }
 
 .product:hover .product-image img{
-
     transform:scale(1.065);
 }
 
-
-/* =====================================================
-   PRODUCT TAG
-===================================================== */
-
 .product-tag{
-
     position:absolute;
 
-    top:12px;
-    left:12px;
+    top:14px;
+    left:14px;
 
     background:rgba(255,248,250,.92);
 
-    padding:6px 9px;
+    padding:7px 11px;
 
-    font:500 7px "Montserrat";
+    font:500 8px "Montserrat";
 
-    letter-spacing:1.3px;
+    letter-spacing:1.5px;
 
     color:#8c5d6d;
 
@@ -927,14 +889,8 @@ nav{
     border:1px solid #f0d6de;
 }
 
-
-/* =====================================================
-   PRODUCT INFO
-===================================================== */
-
 .product-info{
-
-    padding:14px 3px 0;
+    padding:18px 4px 0;
 
     position:relative;
 
@@ -942,8 +898,11 @@ nav{
 }
 
 .product-info h3{
-
-    font:600 20px "Cormorant Garamond",serif;
+    font:
+        600
+        24px
+        "Cormorant Garamond",
+        serif;
 
     letter-spacing:1px;
 
@@ -953,12 +912,11 @@ nav{
 }
 
 .product-info p{
-
-    font-size:9px;
+    font-size:10px;
 
     color:#998a91;
 
-    margin-bottom:9px;
+    margin-bottom:10px;
 
     white-space:nowrap;
 
@@ -968,7 +926,6 @@ nav{
 }
 
 .product-bottom{
-
     display:flex;
 
     justify-content:space-between;
@@ -977,8 +934,7 @@ nav{
 }
 
 .product-price{
-
-    font:500 11px "Montserrat";
+    font:500 12px "Montserrat";
 
     letter-spacing:1px;
 
@@ -986,8 +942,7 @@ nav{
 }
 
 .view-product{
-
-    font:500 8px "Montserrat";
+    font:500 9px "Montserrat";
 
     letter-spacing:1px;
 
@@ -997,8 +952,7 @@ nav{
 }
 
 .product:hover .view-product{
-
-    letter-spacing:1.5px;
+    letter-spacing:1.7px;
 }
 
 
@@ -1007,7 +961,6 @@ nav{
 ===================================================== */
 
 .newsletter-cta-section{
-
     position:relative;
 
     overflow:hidden;
@@ -1036,7 +989,6 @@ nav{
 
 .newsletter-cta-section:before,
 .newsletter-cta-section:after{
-
     content:"";
 
     position:absolute;
@@ -1049,7 +1001,6 @@ nav{
 }
 
 .newsletter-cta-section:before{
-
     width:330px;
     height:330px;
 
@@ -1058,7 +1009,6 @@ nav{
 }
 
 .newsletter-cta-section:after{
-
     width:270px;
     height:270px;
 
@@ -1067,7 +1017,6 @@ nav{
 }
 
 .newsletter-cta-decoration{
-
     color:#c9859a;
 
     font-size:12px;
@@ -1080,7 +1029,6 @@ nav{
 }
 
 .newsletter-cta-content{
-
     position:relative;
 
     z-index:2;
@@ -1091,7 +1039,6 @@ nav{
 }
 
 .newsletter-cta-kicker{
-
     font:600 9px "Montserrat";
 
     letter-spacing:4px;
@@ -1102,8 +1049,11 @@ nav{
 }
 
 .newsletter-cta-content h2{
-
-    font:500 clamp(40px,5vw,57px)/.95 "Cormorant Garamond",serif;
+    font:
+        500
+        clamp(40px,5vw,57px)/.95
+        "Cormorant Garamond",
+        serif;
 
     color:#352a2e;
 
@@ -1111,7 +1061,6 @@ nav{
 }
 
 .newsletter-cta-content h2 em{
-
     color:#b66f86;
 
     font-style:normal;
@@ -1120,7 +1069,6 @@ nav{
 }
 
 .newsletter-cta-content p{
-
     max-width:470px;
 
     margin:0 auto 27px;
@@ -1133,7 +1081,6 @@ nav{
 }
 
 .newsletter-main-button{
-
     position:relative;
 
     display:inline-flex;
@@ -1169,7 +1116,6 @@ nav{
 }
 
 .newsletter-main-button:hover{
-
     transform:translateY(-4px);
 
     background-position:100% 0;
@@ -1180,7 +1126,6 @@ nav{
 }
 
 .button-icon{
-
     width:40px;
     height:40px;
 
@@ -1203,10 +1148,11 @@ nav{
 }
 
 .newsletter-main-button strong{
-
     display:block;
 
-    font:500 12px
+    font:
+        500
+        12px
         "Noto Sans Thai",
         "Montserrat",
         sans-serif;
@@ -1215,7 +1161,6 @@ nav{
 }
 
 .newsletter-main-button small{
-
     display:block;
 
     margin-top:3px;
@@ -1228,7 +1173,6 @@ nav{
 }
 
 .button-arrow{
-
     margin-left:auto;
 
     color:#e3aebe;
@@ -1239,12 +1183,10 @@ nav{
 }
 
 .newsletter-main-button:hover .button-arrow{
-
     transform:translateX(5px);
 }
 
 .newsletter-cta-note{
-
     margin-top:15px;
 
     color:#a48d96;
@@ -1260,7 +1202,6 @@ nav{
 ===================================================== */
 
 .story{
-
     background:linear-gradient(
         135deg,
         #30272a,
@@ -1282,7 +1223,6 @@ nav{
 }
 
 .story:before{
-
     content:"✦   ✧   ⋆";
 
     position:absolute;
@@ -1300,7 +1240,6 @@ nav{
 }
 
 .story:after{
-
     content:"";
 
     position:absolute;
@@ -1317,7 +1256,6 @@ nav{
 }
 
 .story-content{
-
     padding:75px 12%;
 
     display:flex;
@@ -1332,7 +1270,6 @@ nav{
 }
 
 .story-kicker{
-
     font:500 9px "Montserrat";
 
     letter-spacing:4px;
@@ -1343,14 +1280,12 @@ nav{
 }
 
 .story h2{
-
     font:500 45px/1 "Cormorant Garamond",serif;
 
     margin-bottom:20px;
 }
 
 .story p{
-
     font-size:12px;
 
     line-height:2;
@@ -1361,11 +1296,9 @@ nav{
 }
 
 .story-mark{
-
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     font:500 120px "Cormorant Garamond";
@@ -1378,7 +1311,6 @@ nav{
 }
 
 .story-mark:before{
-
     content:"✦";
 
     position:absolute;
@@ -1392,7 +1324,6 @@ nav{
 }
 
 .story-mark:after{
-
     content:"✧";
 
     position:absolute;
@@ -1411,7 +1342,6 @@ nav{
 ===================================================== */
 
 footer{
-
     background:#20191c;
 
     color:#fff;
@@ -1422,7 +1352,6 @@ footer{
 }
 
 footer:before{
-
     content:"✦  ✧  ⋆  ✦  ✧";
 
     display:block;
@@ -1441,7 +1370,6 @@ footer:before{
 }
 
 .footer-container{
-
     display:grid;
 
     grid-template-columns:2fr 1fr 1fr;
@@ -1454,7 +1382,6 @@ footer:before{
 }
 
 .footer-logo{
-
     font:600 31px "Cormorant Garamond";
 
     letter-spacing:6px;
@@ -1464,7 +1391,6 @@ footer:before{
 
 footer p,
 footer a{
-
     font-size:11px;
 
     line-height:2;
@@ -1473,7 +1399,6 @@ footer a{
 }
 
 footer h3{
-
     font-size:12px;
 
     letter-spacing:1px;
@@ -1484,7 +1409,6 @@ footer h3{
 }
 
 footer a{
-
     display:block;
 
     margin-bottom:7px;
@@ -1493,14 +1417,12 @@ footer a{
 }
 
 footer a:hover{
-
     color:#e0a1b3;
 
     transform:translateX(3px);
 }
 
 .copyright{
-
     text-align:center;
 
     border-top:1px solid #3b3034;
@@ -1516,7 +1438,7 @@ footer a:hover{
 
 
 /* =====================================================
-   VELOURA ADVERTISEMENT POPUP
+   ADVERTISEMENT POPUP
 ===================================================== */
 
 .veloura-ad-overlay{
@@ -1568,6 +1490,7 @@ footer a:hover{
 .veloura-ad-slider{
 
     width:100%;
+
     height:100%;
 
     min-height:440px;
@@ -1605,11 +1528,6 @@ footer a:hover{
 
     transform:translateX(0);
 }
-
-
-/* =====================================================
-   CLOSE
-===================================================== */
 
 .veloura-ad-close{
 
@@ -1652,9 +1570,7 @@ footer a:hover{
 }
 
 
-/* =====================================================
-   AD 1
-===================================================== */
+/* AD STORE */
 
 .ad-store-image{
 
@@ -1682,7 +1598,10 @@ footer a:hover{
 
     color:rgba(255,255,255,.6);
 
-    font:600 65px "Cormorant Garamond";
+    font:
+        600
+        65px
+        "Cormorant Garamond";
 
     letter-spacing:8px;
 
@@ -1701,10 +1620,14 @@ footer a:hover{
     transition:1s;
 }
 
-.veloura-ad-slide.active .ad-store-image img{
+.veloura-ad-slide.active
+.ad-store-image img{
 
     transform:scale(1.04);
 }
+
+
+/* AD CONTENT */
 
 .ad-content{
 
@@ -1738,7 +1661,11 @@ footer a:hover{
 
 .ad-content h2{
 
-    font:500 52px/.9 "Cormorant Garamond",serif;
+    font:
+        500
+        52px/.9
+        "Cormorant Garamond",
+        serif;
 
     color:#352a2e;
 
@@ -1793,7 +1720,9 @@ footer a:hover{
 
     transition:.3s;
 
-    box-shadow:0 12px 25px rgba(52,40,45,.18);
+    box-shadow:
+        0 12px 25px
+        rgba(52,40,45,.18);
 }
 
 .ad-button:hover{
@@ -1804,9 +1733,7 @@ footer a:hover{
 }
 
 
-/* =====================================================
-   AD 2
-===================================================== */
+/* AD PROMOTION */
 
 .ad-promotion{
 
@@ -1960,9 +1887,7 @@ footer a:hover{
 }
 
 
-/* =====================================================
-   AD 3
-===================================================== */
+/* AD NEW PRODUCT */
 
 .ad-new-product{
 
@@ -1996,7 +1921,8 @@ footer a:hover{
     transition:1s;
 }
 
-.veloura-ad-slide.active .ad-new-image img{
+.veloura-ad-slide.active
+.ad-new-image img{
 
     transform:scale(1.035);
 }
@@ -2045,7 +1971,11 @@ footer a:hover{
 
 .ad-new-name{
 
-    font:600 27px "Cormorant Garamond",serif;
+    font:
+        600
+        27px
+        "Cormorant Garamond",
+        serif;
 
     color:#b16d83;
 
@@ -2083,9 +2013,7 @@ footer a:hover{
 }
 
 
-/* =====================================================
-   SLIDER CONTROLS
-===================================================== */
+/* CONTROLS */
 
 .ad-controls{
 
@@ -2178,11 +2106,6 @@ footer a:hover{
     right:15px;
 }
 
-
-/* =====================================================
-   PROGRESS
-===================================================== */
-
 .ad-progress{
 
     position:absolute;
@@ -2202,9 +2125,7 @@ footer a:hover{
 }
 
 
-/* =====================================================
-   ANIMATIONS
-===================================================== */
+/* ANIMATION */
 
 @keyframes adOverlayIn{
 
@@ -2322,127 +2243,28 @@ footer a:hover{
 
 
 /* =====================================================
-   RESPONSIVE AD SMALL
-===================================================== */
-
-@media(max-width:550px){
-
-    .veloura-ad-overlay{
-
-        padding:12px;
-    }
-
-    .veloura-ad-box{
-
-        width:100%;
-
-        min-height:540px;
-    }
-
-    .veloura-ad-slider{
-
-        min-height:540px;
-    }
-
-    .ad-store-image{
-
-        min-height:200px;
-
-        height:200px;
-    }
-
-    .ad-content{
-
-        padding:30px 24px 65px;
-    }
-
-    .ad-content h2{
-
-        font-size:39px;
-    }
-
-    .ad-content p{
-
-        font-size:11px;
-    }
-
-    .ad-promotion{
-
-        min-height:540px;
-    }
-
-    .ad-promotion-content{
-
-        padding:50px 22px 70px;
-    }
-
-    .ad-promotion h2{
-
-        font-size:43px;
-    }
-
-    .promo-big{
-
-        font-size:19px;
-    }
-
-    .ad-new-image{
-
-        min-height:200px;
-
-        height:200px;
-    }
-
-    .ad-new-content{
-
-        padding:25px 22px 65px;
-    }
-
-    .ad-new-name{
-
-        font-size:24px;
-    }
-
-    .ad-arrow{
-
-        width:34px;
-        height:34px;
-    }
-
-}
-
-
-/* =====================================================
    RESPONSIVE WEBSITE
 ===================================================== */
 
 @media(max-width:1000px){
 
     nav{
-
         padding:0 3%;
     }
 
     .nav-links{
-
         gap:15px;
     }
 
     .logo{
-
         min-width:auto;
     }
 
     .products{
-
         max-width:750px;
-
-        grid-template-columns:
-            repeat(3, minmax(210px, 240px));
     }
 
     .story-content{
-
         padding:60px 8%;
     }
 
@@ -2528,22 +2350,12 @@ footer a:hover{
         max-width:430px;
     }
 
-
-    /* =================================================
-       TABLET
-       คอลเลกชันแนะนำ 2 ช่อง
-    ================================================= */
-
     .products{
 
-        grid-template-columns:
-            repeat(2, minmax(210px, 240px));
+        grid-template-columns:repeat(2,1fr);
 
-        max-width:520px;
-
-        gap:24px;
+        gap:22px;
     }
-
 
     .story{
 
@@ -2557,6 +2369,11 @@ footer a:hover{
 
 }
 
+
+/* =====================================================
+   MOBILE
+   ปรับคอลเลกชันแนะนำให้เล็กลง
+===================================================== */
 
 @media(max-width:550px){
 
@@ -2591,40 +2408,151 @@ footer a:hover{
         font-size:38px;
     }
 
+
+    /* =================================================
+       COLLECTION MOBILE
+       ทำให้รูปเล็กลง
+    ================================================= */
+
     .collection{
 
         padding-left:20px;
 
         padding-right:20px;
+
+        padding-bottom:70px;
     }
 
-
-    /* =================================================
-       MOBILE
-       แสดงสินค้า 1 ช่อง
-    ================================================= */
 
     .products{
 
         grid-template-columns:1fr;
 
-        max-width:300px;
+        max-width:260px;
+
+        margin:0 auto;
 
         gap:28px;
     }
 
 
-    .product-image{
+    .product{
 
-        aspect-ratio:4/4.5;
+        width:100%;
+
+        max-width:260px;
+
+        margin:0 auto;
     }
 
+
+    .product-image{
+
+        width:100%;
+
+        aspect-ratio:4 / 5;
+
+        box-shadow:
+            0 10px 24px
+            rgba(95,57,70,.08);
+    }
+
+
+    .product-info{
+
+        padding:15px 3px 0;
+    }
+
+
+    .product-info h3{
+
+        font-size:22px;
+    }
+
+
+    .product-info p{
+
+        font-size:9px;
+    }
+
+
+    .product-price{
+
+        font-size:11px;
+    }
+
+
+    .view-product{
+
+        font-size:8px;
+    }
+
+
+    /* FOOTER */
 
     .footer-container{
 
         grid-template-columns:1fr;
 
         gap:30px;
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+===================================================== */
+
+@media(max-width:380px){
+
+    .products{
+
+        max-width:230px;
+    }
+
+    .product{
+
+        max-width:230px;
+    }
+
+    .product-info h3{
+
+        font-size:20px;
+    }
+
+    .product-info p{
+
+        font-size:8px;
+    }
+
+    .product-price{
+
+        font-size:10px;
+    }
+
+    .view-product{
+
+        font-size:7px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL SCREEN
+===================================================== */
+
+@media(max-width:320px){
+
+    .products{
+
+        max-width:210px;
+    }
+
+    .product{
+
+        max-width:210px;
     }
 
 }
@@ -2652,8 +2580,6 @@ footer a:hover{
     <div class="veloura-ad-box">
 
 
-        <!-- CLOSE -->
-
         <button
             type="button"
             class="veloura-ad-close"
@@ -2669,9 +2595,7 @@ footer a:hover{
         <div class="veloura-ad-slider">
 
 
-            <!-- =================================================
-                 AD 1 : ABOUT VELOURA
-            ================================================== -->
+            <!-- AD 1 -->
 
             <div class="veloura-ad-slide active">
 
@@ -2726,10 +2650,7 @@ footer a:hover{
             </div>
 
 
-
-            <!-- =================================================
-                 AD 2 : PROMOTION
-            ================================================== -->
+            <!-- AD 2 -->
 
             <div class="veloura-ad-slide">
 
@@ -2792,10 +2713,7 @@ footer a:hover{
             </div>
 
 
-
-            <!-- =================================================
-                 AD 3 : NEW PRODUCT FROM DATABASE
-            ================================================== -->
+            <!-- AD 3 -->
 
             <div class="veloura-ad-slide">
 
@@ -2882,7 +2800,6 @@ footer a:hover{
 
                         <?php endif; ?>
 
-
                     </div>
 
                 </div>
@@ -2949,8 +2866,6 @@ footer a:hover{
         </div>
 
 
-        <!-- PROGRESS -->
-
         <div
             class="ad-progress"
             id="adProgress"
@@ -2960,7 +2875,6 @@ footer a:hover{
     </div>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2984,7 +2898,6 @@ footer a:hover{
 </div>
 
 
-
 <!-- =====================================================
      TOP BAR
 ===================================================== -->
@@ -2996,7 +2909,6 @@ footer a:hover{
     LUXURY FRAGRANCE FOR EVERY MOMENT ✦
 
 </div>
-
 
 
 <!-- =====================================================
@@ -3069,9 +2981,7 @@ footer a:hover{
             <?php if ($cart_count > 0): ?>
 
                 <span class="cart-count">
-
                     <?= $cart_count ?>
-
                 </span>
 
             <?php endif; ?>
@@ -3081,7 +2991,6 @@ footer a:hover{
     </div>
 
 </nav>
-
 
 
 <!-- =====================================================
@@ -3147,7 +3056,6 @@ footer a:hover{
 </section>
 
 
-
 <!-- =====================================================
      INTRO
 ===================================================== -->
@@ -3175,7 +3083,6 @@ footer a:hover{
 </section>
 
 
-
 <!-- =====================================================
      PRODUCTS
 ===================================================== -->
@@ -3195,6 +3102,7 @@ footer a:hover{
                     href="products.php?id=<?= (int)$product['id'] ?>"
                     class="product"
                 >
+
 
                     <div class="product-image">
 
@@ -3235,6 +3143,7 @@ footer a:hover{
 
                         </h3>
 
+
                         <p>
 
                             <?= htmlspecialchars(
@@ -3250,7 +3159,6 @@ footer a:hover{
                             <span class="product-price">
 
                                 $
-
                                 <?= number_format(
                                     (float)$product['price'],
                                     2
@@ -3268,6 +3176,7 @@ footer a:hover{
                         </div>
 
                     </div>
+
 
                 </a>
 
@@ -3300,12 +3209,12 @@ footer a:hover{
 </section>
 
 
-
 <!-- =====================================================
      NEWSLETTER CTA
 ===================================================== -->
 
 <section class="newsletter-cta-section">
+
 
     <div class="newsletter-cta-decoration">
 
@@ -3315,6 +3224,7 @@ footer a:hover{
 
 
     <div class="newsletter-cta-content">
+
 
         <div class="newsletter-cta-kicker">
 
@@ -3345,6 +3255,7 @@ footer a:hover{
             class="newsletter-main-button"
         >
 
+
             <span class="button-icon">
 
                 <i class="fa-regular fa-envelope"></i>
@@ -3355,21 +3266,18 @@ footer a:hover{
             <span>
 
                 <strong>
-
                     สมัครรับข่าวสาร
-
                 </strong>
 
                 <small>
-
                     VELOURA NEWSLETTER
-
                 </small>
 
             </span>
 
 
             <i class="fa-solid fa-arrow-right button-arrow"></i>
+
 
         </a>
 
@@ -3380,10 +3288,10 @@ footer a:hover{
 
         </div>
 
+
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -3392,13 +3300,16 @@ footer a:hover{
 
 <section class="story">
 
+
     <div class="story-content">
+
 
         <div class="story-kicker">
 
             ABOUT VELOURA ✧
 
         </div>
+
 
         <h2>
 
@@ -3408,6 +3319,7 @@ footer a:hover{
 
         </h2>
 
+
         <p>
 
             VELOURA เชื่อว่าน้ำหอมไม่ใช่เพียงกลิ่นหอม
@@ -3415,6 +3327,7 @@ footer a:hover{
             ความรู้สึก และความทรงจำของผู้สวมใส่
 
         </p>
+
 
     </div>
 
@@ -3425,8 +3338,8 @@ footer a:hover{
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -3435,16 +3348,19 @@ footer a:hover{
 
 <footer>
 
+
     <div class="footer-container">
 
 
         <div>
+
 
             <div class="footer-logo">
 
                 VELOURA
 
             </div>
+
 
             <p>
 
@@ -3454,10 +3370,12 @@ footer a:hover{
 
             </p>
 
+
         </div>
 
 
         <div>
+
 
             <h3>
 
@@ -3465,34 +3383,29 @@ footer a:hover{
 
             </h3>
 
+
             <a href="index.php">
-
                 หน้าแรก
-
             </a>
 
             <a href="products.php">
-
                 สินค้า
-
             </a>
 
             <a href="about.php">
-
                 เกี่ยวกับเรา
-
             </a>
 
             <a href="collection.php">
-
                 คอลเลกชัน
-
             </a>
+
 
         </div>
 
 
         <div>
+
 
             <h3>
 
@@ -3500,29 +3413,23 @@ footer a:hover{
 
             </h3>
 
+
             <a href="find-scent.php">
-
                 ค้นหากลิ่น
-
             </a>
 
             <a href="contact.php">
-
                 ติดต่อเรา
-
             </a>
 
             <a href="profile.php">
-
                 บัญชีของฉัน
-
             </a>
 
             <a href="cart.php">
-
                 รถเข็น
-
             </a>
+
 
         </div>
 
@@ -3540,8 +3447,8 @@ footer a:hover{
 
     </div>
 
-</footer>
 
+</footer>
 
 
 <!-- =====================================================
@@ -3550,406 +3457,416 @@ footer a:hover{
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
 
-    const ad =
-        document.getElementById("velouraAd");
+        const ad =
+            document.getElementById("velouraAd");
 
-    const closeAd =
-        document.getElementById("closeVelouraAd");
+        const closeAd =
+            document.getElementById("closeVelouraAd");
 
-    const slides =
-        document.querySelectorAll(
-            ".veloura-ad-slide"
-        );
-
-    const dots =
-        document.querySelectorAll(
-            ".ad-dot"
-        );
-
-    const prev =
-        document.getElementById("adPrev");
-
-    const next =
-        document.getElementById("adNext");
-
-    const progress =
-        document.getElementById("adProgress");
-
-
-    if(
-        !ad ||
-        !closeAd ||
-        slides.length === 0
-    ){
-
-        return;
-
-    }
-
-
-    let currentSlide = 0;
-
-    let autoSlide = null;
-
-    const slideTime = 4500;
-
-
-    /* =================================================
-       SHOW SLIDE
-    ================================================= */
-
-    function showSlide(index){
-
-        if(index < 0){
-
-            index =
-                slides.length - 1;
-
-        }
-
-        if(index >= slides.length){
-
-            index = 0;
-
-        }
-
-
-        slides.forEach(function(slide){
-
-            slide.classList.remove(
-                "active"
+        const slides =
+            document.querySelectorAll(
+                ".veloura-ad-slide"
             );
 
-        });
-
-
-        dots.forEach(function(dot){
-
-            dot.classList.remove(
-                "active"
+        const dots =
+            document.querySelectorAll(
+                ".ad-dot"
             );
 
-        });
+        const prev =
+            document.getElementById("adPrev");
+
+        const next =
+            document.getElementById("adNext");
+
+        const progress =
+            document.getElementById("adProgress");
 
 
-        slides[index].classList.add(
-            "active"
-        );
+        if(
+            !ad ||
+            !closeAd ||
+            slides.length === 0
+        ){
 
-
-        if(dots[index]){
-
-            dots[index].classList.add(
-                "active"
-            );
+            return;
 
         }
 
 
-        currentSlide = index;
+        let currentSlide = 0;
+
+        let autoSlide = null;
+
+        const slideTime = 4500;
 
 
-        if(progress){
+        /* =================================================
+           SHOW SLIDE
+        ================================================= */
 
-            progress.style.width =
-                (
-                    (index + 1)
-                    /
-                    slides.length
-                    *
-                    100
-                )
-                + "%";
+        function showSlide(index){
 
-        }
+            if(index < 0){
 
-    }
+                index =
+                    slides.length - 1;
 
+            }
 
-    /* =================================================
-       NEXT
-    ================================================= */
+            if(index >= slides.length){
 
-    function nextSlide(){
+                index = 0;
 
-        showSlide(
-            currentSlide + 1
-        );
-
-        restartAutoSlide();
-
-    }
+            }
 
 
-    /* =================================================
-       PREVIOUS
-    ================================================= */
+            slides.forEach(
+                function(slide){
 
-    function prevSlide(){
-
-        showSlide(
-            currentSlide - 1
-        );
-
-        restartAutoSlide();
-
-    }
-
-
-    /* =================================================
-       AUTO SLIDE
-    ================================================= */
-
-    function startAutoSlide(){
-
-        autoSlide =
-            setInterval(
-                function(){
-
-                    showSlide(
-                        currentSlide + 1
+                    slide.classList.remove(
+                        "active"
                     );
 
-                },
-                slideTime
+                }
             );
 
-    }
+
+            dots.forEach(
+                function(dot){
+
+                    dot.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
 
 
-    function restartAutoSlide(){
+            slides[index].classList.add(
+                "active"
+            );
 
-        clearInterval(
-            autoSlide
+
+            if(dots[index]){
+
+                dots[index].classList.add(
+                    "active"
+                );
+
+            }
+
+
+            currentSlide = index;
+
+
+            if(progress){
+
+                progress.style.width =
+                    (
+                        (index + 1)
+                        /
+                        slides.length
+                        *
+                        100
+                    )
+                    + "%";
+
+            }
+
+        }
+
+
+        /* =================================================
+           NEXT
+        ================================================= */
+
+        function nextSlide(){
+
+            showSlide(
+                currentSlide + 1
+            );
+
+            restartAutoSlide();
+
+        }
+
+
+        /* =================================================
+           PREVIOUS
+        ================================================= */
+
+        function prevSlide(){
+
+            showSlide(
+                currentSlide - 1
+            );
+
+            restartAutoSlide();
+
+        }
+
+
+        /* =================================================
+           AUTO SLIDE
+        ================================================= */
+
+        function startAutoSlide(){
+
+            autoSlide =
+                setInterval(
+                    function(){
+
+                        showSlide(
+                            currentSlide + 1
+                        );
+
+                    },
+                    slideTime
+                );
+
+        }
+
+
+        function restartAutoSlide(){
+
+            clearInterval(
+                autoSlide
+            );
+
+            startAutoSlide();
+
+        }
+
+
+        /* =================================================
+           BUTTONS
+        ================================================= */
+
+        if(next){
+
+            next.addEventListener(
+                "click",
+                nextSlide
+            );
+
+        }
+
+
+        if(prev){
+
+            prev.addEventListener(
+                "click",
+                prevSlide
+            );
+
+        }
+
+
+        /* =================================================
+           DOTS
+        ================================================= */
+
+        dots.forEach(
+            function(dot){
+
+                dot.addEventListener(
+                    "click",
+                    function(){
+
+                        const index =
+                            parseInt(
+                                dot.getAttribute(
+                                    "data-slide"
+                                )
+                            );
+
+                        showSlide(index);
+
+                        restartAutoSlide();
+
+                    }
+                );
+
+            }
         );
+
+
+        /* =================================================
+           CLOSE
+        ================================================= */
+
+        function hideAd(){
+
+            ad.style.opacity = "0";
+
+            ad.style.transition =
+                "opacity .25s ease";
+
+
+            setTimeout(
+                function(){
+
+                    ad.style.display =
+                        "none";
+
+                },
+                250
+            );
+
+
+            sessionStorage.setItem(
+                "velouraAdsClosed",
+                "1"
+            );
+
+
+            clearInterval(
+                autoSlide
+            );
+
+        }
+
+
+        closeAd.addEventListener(
+            "click",
+            hideAd
+        );
+
+
+        /* Click ด้านนอก Popup */
+
+        ad.addEventListener(
+            "click",
+            function(event){
+
+                if(event.target === ad){
+
+                    hideAd();
+
+                }
+
+            }
+        );
+
+
+        /* กด ESC */
+
+        document.addEventListener(
+            "keydown",
+            function(event){
+
+                if(
+                    event.key === "Escape" &&
+                    ad.style.display !== "none"
+                ){
+
+                    hideAd();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           TOUCH / SWIPE MOBILE
+        ================================================= */
+
+        let touchStartX = 0;
+
+        let touchEndX = 0;
+
+
+        ad.addEventListener(
+            "touchstart",
+            function(event){
+
+                touchStartX =
+                    event.changedTouches[0]
+                    .screenX;
+
+            },
+            {
+                passive:true
+            }
+        );
+
+
+        ad.addEventListener(
+            "touchend",
+            function(event){
+
+                touchEndX =
+                    event.changedTouches[0]
+                    .screenX;
+
+
+                const distance =
+                    touchStartX -
+                    touchEndX;
+
+
+                if(
+                    Math.abs(distance) < 50
+                ){
+
+                    return;
+
+                }
+
+
+                if(distance > 0){
+
+                    nextSlide();
+
+                }else{
+
+                    prevSlide();
+
+                }
+
+            },
+            {
+                passive:true
+            }
+        );
+
+
+        /* =================================================
+           แสดงแค่ครั้งเดียวต่อ Session
+        ================================================= */
+
+        if(
+            sessionStorage.getItem(
+                "velouraAdsClosed"
+            ) === "1"
+        ){
+
+            ad.style.display =
+                "none";
+
+            return;
+
+        }
+
+
+        /* เริ่มจากโฆษณาแรก */
+
+        showSlide(0);
 
         startAutoSlide();
 
     }
-
-
-    /* =================================================
-       BUTTONS
-    ================================================= */
-
-    if(next){
-
-        next.addEventListener(
-            "click",
-            nextSlide
-        );
-
-    }
-
-
-    if(prev){
-
-        prev.addEventListener(
-            "click",
-            prevSlide
-        );
-
-    }
-
-
-    /* =================================================
-       DOTS
-    ================================================= */
-
-    dots.forEach(function(dot){
-
-        dot.addEventListener(
-            "click",
-            function(){
-
-                const index =
-                    parseInt(
-                        dot.getAttribute(
-                            "data-slide"
-                        )
-                    );
-
-                showSlide(index);
-
-                restartAutoSlide();
-
-            }
-        );
-
-    });
-
-
-    /* =================================================
-       CLOSE
-    ================================================= */
-
-    function hideAd(){
-
-        ad.style.opacity = "0";
-
-        ad.style.transition =
-            "opacity .25s ease";
-
-
-        setTimeout(
-            function(){
-
-                ad.style.display =
-                    "none";
-
-            },
-            250
-        );
-
-
-        sessionStorage.setItem(
-            "velouraAdsClosed",
-            "1"
-        );
-
-
-        clearInterval(
-            autoSlide
-        );
-
-    }
-
-
-    closeAd.addEventListener(
-        "click",
-        hideAd
-    );
-
-
-    /* Click ด้านนอก Popup */
-
-    ad.addEventListener(
-        "click",
-        function(event){
-
-            if(event.target === ad){
-
-                hideAd();
-
-            }
-
-        }
-    );
-
-
-    /* กด ESC */
-
-    document.addEventListener(
-        "keydown",
-        function(event){
-
-            if(
-                event.key === "Escape" &&
-                ad.style.display !== "none"
-            ){
-
-                hideAd();
-
-            }
-
-        }
-    );
-
-
-    /* =================================================
-       TOUCH / SWIPE MOBILE
-    ================================================= */
-
-    let touchStartX = 0;
-
-    let touchEndX = 0;
-
-
-    ad.addEventListener(
-        "touchstart",
-        function(event){
-
-            touchStartX =
-                event.changedTouches[0]
-                .screenX;
-
-        },
-        {
-            passive:true
-        }
-    );
-
-
-    ad.addEventListener(
-        "touchend",
-        function(event){
-
-            touchEndX =
-                event.changedTouches[0]
-                .screenX;
-
-
-            const distance =
-                touchStartX -
-                touchEndX;
-
-
-            if(
-                Math.abs(distance) < 50
-            ){
-
-                return;
-
-            }
-
-
-            if(distance > 0){
-
-                nextSlide();
-
-            }else{
-
-                prevSlide();
-
-            }
-
-        },
-        {
-            passive:true
-        }
-    );
-
-
-    /* =================================================
-       แสดงแค่ครั้งเดียวต่อ Session
-    ================================================= */
-
-    if(
-        sessionStorage.getItem(
-            "velouraAdsClosed"
-        ) === "1"
-    ){
-
-        ad.style.display =
-            "none";
-
-        return;
-
-    }
-
-
-    /* เริ่มจากโฆษณาแรก */
-
-    showSlide(0);
-
-    startAutoSlide();
-
-});
+);
 
 </script>
 
 
 </body>
+
 </html>
