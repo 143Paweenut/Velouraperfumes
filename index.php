@@ -15,7 +15,7 @@ if (isset($_SESSION["cart"]) && is_array($_SESSION["cart"])) {
 
 
 /* =====================================================
-   ดึงสินค้า 3 รายการล่าสุดมาแสดงหน้าร้าน
+   ดึงสินค้า 3 รายการล่าสุด
 ===================================================== */
 
 $featured_products = [];
@@ -39,7 +39,7 @@ if ($result) {
 
 
 /* =====================================================
-   ดึงสินค้าใหม่ล่าสุดจากฐานข้อมูล
+   ดึงสินค้าใหม่ล่าสุด
 ===================================================== */
 
 $new_product = null;
@@ -77,11 +77,15 @@ if ($new_product) {
     );
 
     if (!empty($new_product["image"])) {
+
         $new_product_image = $new_product["image"];
+
     }
 
     if (!empty($new_product["description"])) {
+
         $new_product_description = $new_product["description"];
+
     }
 
 }
@@ -110,10 +114,7 @@ if ($new_product) {
      GOOGLE FONTS
 ===================================================== -->
 
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link
     rel="preconnect"
@@ -317,9 +318,11 @@ a{
     position:absolute;
 
     top:0;
+
     left:-20%;
 
     width:20%;
+
     height:100%;
 
     background:
@@ -682,8 +685,7 @@ nav{
         ease;
 }
 
-.hero:hover
-.hero-image img{
+.hero:hover .hero-image img{
 
     transform:scale(1.025);
 }
@@ -779,7 +781,8 @@ nav{
             #eed2da
         );
 
-    margin:5px 0 22px;
+    margin:
+        5px 0 22px;
 }
 
 .hero-description{
@@ -866,19 +869,14 @@ nav{
 
 /* =====================================================
    INTRO
-   แก้ระยะห่างของคอลเลกชันแนะนำ
 ===================================================== */
 
 .intro{
 
     text-align:center;
 
-    /*
-       เดิม 82px 20px 52px
-       ลดลงเพื่อให้สินค้าขยับขึ้น
-    */
-
-    padding:55px 20px 12px;
+    padding:
+        82px 20px 38px;
 
     background:#fff;
 }
@@ -893,7 +891,7 @@ nav{
 
     color:#bd7d91;
 
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
 .intro h2{
@@ -905,7 +903,7 @@ nav{
 
     color:#352a2e;
 
-    margin-bottom:8px;
+    margin-bottom:13px;
 }
 
 .intro p{
@@ -914,9 +912,7 @@ nav{
 
     color:#95868d;
 
-    line-height:1.8;
-
-    margin:0;
+    line-height:1.9;
 }
 
 .intro h2:after{
@@ -932,20 +928,15 @@ nav{
 
 
 /* =====================================================
-   PRODUCTS
-   แก้ให้สินค้าอยู่ใกล้หัวข้อ
+   PRODUCTS / COLLECTION
 ===================================================== */
 
 .collection{
 
     background:#fff;
 
-    /*
-       เดิม padding:25px 7% 100px
-       ลดด้านบนเหลือ 3px
-    */
-
-    padding:3px 7% 85px;
+    padding:
+        8px 6% 100px;
 }
 
 .products{
@@ -955,12 +946,17 @@ nav{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:28px;
+    gap:24px;
 
-    max-width:1120px;
+    max-width:1050px;
 
     margin:0 auto;
 }
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
 
 .product{
 
@@ -970,7 +966,8 @@ nav{
 
     transition:.35s;
 
-    padding:0 0 5px;
+    padding:
+        0 0 8px;
 }
 
 .product:after{
@@ -979,9 +976,9 @@ nav{
 
     position:absolute;
 
-    inset:-10px;
+    inset:-8px;
 
-    border-radius:4px;
+    border-radius:6px;
 
     background:
         linear-gradient(
@@ -999,8 +996,7 @@ nav{
 
 .product:hover{
 
-    transform:
-        translateY(-7px);
+    transform:translateY(-6px);
 }
 
 .product:hover:after{
@@ -1008,11 +1004,16 @@ nav{
     opacity:1;
 }
 
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
 .product-image{
 
-    width:280px;
+    width:100%;
 
-    max-width:100%;
+    max-width:300px;
 
     aspect-ratio:4/5;
 
@@ -1073,8 +1074,13 @@ nav{
 .product:hover
 .product-image img{
 
-    transform:scale(1.065);
+    transform:scale(1.055);
 }
+
+
+/* =====================================================
+   PRODUCT TAG
+===================================================== */
 
 .product-tag{
 
@@ -1085,9 +1091,10 @@ nav{
     left:14px;
 
     background:
-        rgba(255,248,250,.92);
+        rgba(255,248,250,.94);
 
-    padding:7px 11px;
+    padding:
+        7px 11px;
 
     font:
         500 8px
@@ -1103,19 +1110,31 @@ nav{
         1px solid #f0d6de;
 }
 
+
+/* =====================================================
+   PRODUCT INFO
+   แสดงเฉพาะชื่อ + ราคา
+===================================================== */
+
 .product-info{
 
-    padding:15px 4px 0;
+    padding:
+        15px 4px 0;
 
     position:relative;
 
     z-index:1;
+
+    text-align:center;
 }
+
+
+/* ชื่อสินค้า */
 
 .product-info h3{
 
     font:
-        600 24px
+        600 25px
         "Cormorant Garamond",
         serif;
 
@@ -1123,29 +1142,18 @@ nav{
 
     color:#352a2e;
 
-    margin-bottom:4px;
+    margin:
+        0 0 7px;
 }
 
-.product-info p{
 
-    font-size:10px;
-
-    color:#998a91;
-
-    margin-bottom:10px;
-
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-}
+/* ส่วนราคา */
 
 .product-bottom{
 
     display:flex;
 
-    justify-content:space-between;
+    justify-content:center;
 
     align-items:center;
 }
@@ -1153,31 +1161,33 @@ nav{
 .product-price{
 
     font:
-        500 12px
-        "Montserrat";
+        500 13px
+        "Montserrat",
+        sans-serif;
 
     letter-spacing:1px;
 
-    color:#8e6070;
+    color:#9a6577;
 }
+
+
+/* =====================================================
+   ซ่อนรายละเอียดสินค้า
+===================================================== */
+
+.product-info p{
+
+    display:none;
+}
+
+
+/* =====================================================
+   ซ่อน VIEW DETAILS
+===================================================== */
 
 .view-product{
 
-    font:
-        500 9px
-        "Montserrat";
-
-    letter-spacing:1px;
-
-    color:#b16d83;
-
-    transition:.25s;
-}
-
-.product:hover
-.view-product{
-
-    letter-spacing:1.7px;
+    display:none;
 }
 
 
@@ -1191,14 +1201,17 @@ nav{
 
     overflow:hidden;
 
-    padding:75px 20px 85px;
+    padding:
+        75px 20px 85px;
 
     background:
+
         radial-gradient(
             circle at 50% 0%,
             rgba(255,220,230,.65),
             transparent 42%
         ),
+
         linear-gradient(
             135deg,
             #fff8fa,
@@ -1316,7 +1329,8 @@ nav{
 
     max-width:470px;
 
-    margin:0 auto 27px;
+    margin:
+        0 auto 27px;
 
     color:#83747b;
 
@@ -1337,7 +1351,8 @@ nav{
 
     min-width:330px;
 
-    padding:15px 19px;
+    padding:
+        15px 19px;
 
     text-align:left;
 
@@ -1527,7 +1542,8 @@ nav{
 
 .story-content{
 
-    padding:75px 12%;
+    padding:
+        75px 12%;
 
     display:flex;
 
@@ -1636,7 +1652,8 @@ footer{
 
     color:#fff;
 
-    padding:58px 7% 25px;
+    padding:
+        58px 7% 25px;
 
     position:relative;
 }
@@ -1772,6 +1789,9 @@ footer a:hover{
         ease;
 }
 
+
+/* MAIN BOX */
+
 .veloura-ad-box{
 
     width:min(850px,100%);
@@ -1791,6 +1811,7 @@ footer a:hover{
     box-shadow:
         0 35px 100px
         rgba(30,20,25,.35),
+
         0 5px 20px
         rgba(120,70,90,.12);
 
@@ -1799,6 +1820,9 @@ footer a:hover{
         .45s
         ease;
 }
+
+
+/* SLIDER */
 
 .veloura-ad-slider{
 
@@ -1843,9 +1867,7 @@ footer a:hover{
 }
 
 
-/* =====================================================
-   CLOSE
-===================================================== */
+/* CLOSE */
 
 .veloura-ad-close{
 
@@ -1953,9 +1975,13 @@ footer a:hover{
     transform:scale(1.04);
 }
 
+
+/* AD CONTENT */
+
 .ad-content{
 
-    padding:65px 55px;
+    padding:
+        65px 55px;
 
     display:flex;
 
@@ -1964,11 +1990,13 @@ footer a:hover{
     justify-content:center;
 
     background:
+
         radial-gradient(
             circle at 90% 10%,
             rgba(255,255,255,.9),
             transparent 30%
         ),
+
         #fff8fa;
 }
 
@@ -2033,7 +2061,8 @@ footer a:hover{
 
     min-width:180px;
 
-    padding:14px 20px;
+    padding:
+        14px 20px;
 
     background:#34282d;
 
@@ -2067,11 +2096,13 @@ footer a:hover{
 .ad-promotion{
 
     background:
+
         radial-gradient(
             circle at 50% 20%,
             rgba(255,255,255,.25),
             transparent 25%
         ),
+
         linear-gradient(
             135deg,
             #38282f,
@@ -2142,7 +2173,8 @@ footer a:hover{
 
     z-index:2;
 
-    padding:50px 30px;
+    padding:
+        50px 30px;
 }
 
 .ad-promotion .ad-kicker{
@@ -2187,7 +2219,8 @@ footer a:hover{
 
     line-height:2;
 
-    margin:0 auto 25px;
+    margin:
+        0 auto 25px;
 
     max-width:440px;
 }
@@ -2196,7 +2229,8 @@ footer a:hover{
 
     display:inline-block;
 
-    padding:9px 20px;
+    padding:
+        9px 20px;
 
     border:
         1px solid
@@ -2281,7 +2315,8 @@ footer a:hover{
 
     z-index:4;
 
-    padding:8px 12px;
+    padding:
+        8px 12px;
 
     background:
         rgba(255,248,250,.94);
@@ -2300,7 +2335,8 @@ footer a:hover{
 
 .ad-new-content{
 
-    padding:55px 48px;
+    padding:
+        55px 48px;
 
     display:flex;
 
@@ -2488,12 +2524,14 @@ footer a:hover{
     z-index:40;
 
     transition:
-        width .3s ease;
+        width
+        .3s
+        ease;
 }
 
 
 /* =====================================================
-   ANIMATIONS
+   AD ANIMATIONS
 ===================================================== */
 
 @keyframes adOverlayIn{
@@ -2568,7 +2606,8 @@ footer a:hover{
 
     .ad-content{
 
-        padding:35px 30px 65px;
+        padding:
+            35px 30px 65px;
 
         min-height:280px;
     }
@@ -2602,7 +2641,8 @@ footer a:hover{
 
     .ad-new-content{
 
-        padding:30px 28px 65px;
+        padding:
+            30px 28px 65px;
 
         min-height:270px;
     }
@@ -2613,6 +2653,11 @@ footer a:hover{
     }
 
 }
+
+
+/* =====================================================
+   MOBILE AD
+===================================================== */
 
 @media(max-width:550px){
 
@@ -2642,7 +2687,8 @@ footer a:hover{
 
     .ad-content{
 
-        padding:30px 24px 65px;
+        padding:
+            30px 24px 65px;
     }
 
     .ad-content h2{
@@ -2662,7 +2708,8 @@ footer a:hover{
 
     .ad-promotion-content{
 
-        padding:50px 22px 70px;
+        padding:
+            50px 22px 70px;
     }
 
     .ad-promotion h2{
@@ -2684,7 +2731,8 @@ footer a:hover{
 
     .ad-new-content{
 
-        padding:25px 22px 65px;
+        padding:
+            25px 22px 65px;
     }
 
     .ad-new-name{
@@ -2710,7 +2758,8 @@ footer a:hover{
 
     nav{
 
-        padding:0 3%;
+        padding:
+            0 3%;
     }
 
     .nav-links{
@@ -2730,10 +2779,12 @@ footer a:hover{
 
     .story-content{
 
-        padding:60px 8%;
+        padding:
+            60px 8%;
     }
 
 }
+
 
 @media(max-width:800px){
 
@@ -2741,7 +2792,8 @@ footer a:hover{
 
         height:auto;
 
-        padding:18px 20px;
+        padding:
+            18px 20px;
 
         flex-wrap:wrap;
 
@@ -2793,7 +2845,8 @@ footer a:hover{
 
         text-align:center;
 
-        padding:60px 25px;
+        padding:
+            60px 25px;
     }
 
     .hero-content:before,
@@ -2834,6 +2887,7 @@ footer a:hover{
 
 }
 
+
 @media(max-width:550px){
 
     .top-bar{
@@ -2844,7 +2898,8 @@ footer a:hover{
 
         text-align:center;
 
-        padding:0 8px;
+        padding:
+            0 8px;
     }
 
     .nav-right{
@@ -2865,9 +2920,7 @@ footer a:hover{
     .intro{
 
         padding:
-            42px
-            20px
-            8px;
+            65px 20px 25px;
     }
 
     .intro h2{
@@ -2878,9 +2931,7 @@ footer a:hover{
     .collection{
 
         padding:
-            0
-            20px
-            60px;
+            5px 20px 80px;
     }
 
     .products{
@@ -2888,6 +2939,13 @@ footer a:hover{
         grid-template-columns:1fr;
 
         max-width:360px;
+
+        gap:28px;
+    }
+
+    .product-image{
+
+        max-width:330px;
     }
 
     .footer-container{
@@ -2943,18 +3001,15 @@ footer a:hover{
                  AD 1
             ================================================== -->
 
-            <div
-                class="veloura-ad-slide active"
-            >
+            <div class="veloura-ad-slide active">
+
 
                 <div class="ad-store-image">
 
                     <img
                         src="images/perfume-hero.jpg"
                         alt="Veloura Perfumes"
-                        onerror="
-                            this.src='images/perfume-hero.jpg';
-                        "
+                        onerror="this.src='images/perfume-hero.jpg';"
                     >
 
                 </div>
@@ -2963,19 +3018,31 @@ footer a:hover{
                 <div class="ad-content">
 
                     <div class="ad-kicker">
+
                         ✦ WELCOME TO VELOURA ✦
+
                     </div>
 
+
                     <h2>
+
                         The Art<br>
-                        <em>of Fragrance</em>
+
+                        <em>
+                            of Fragrance
+                        </em>
+
                     </h2>
 
+
                     <p>
+
                         VELOURA เชื่อว่าน้ำหอมไม่ใช่เพียงแค่กลิ่นหอม
                         แต่คือรายละเอียดที่สะท้อนตัวตน
                         ความรู้สึก และความทรงจำของคุณ
+
                     </p>
+
 
                     <a
                         href="about.php"
@@ -2984,9 +3051,7 @@ footer a:hover{
 
                         รู้จัก VELOURA
 
-                        <i
-                            class="fa-solid fa-arrow-right"
-                        ></i>
+                        <i class="fa-solid fa-arrow-right"></i>
 
                     </a>
 
@@ -2999,15 +3064,13 @@ footer a:hover{
                  AD 2
             ================================================== -->
 
-            <div
-                class="veloura-ad-slide"
-            >
+            <div class="veloura-ad-slide">
+
 
                 <div class="ad-promotion">
 
-                    <div
-                        class="ad-promotion-content"
-                    >
+                    <div class="ad-promotion-content">
+
 
                         <div class="ad-kicker">
 
@@ -3015,19 +3078,24 @@ footer a:hover{
 
                         </div>
 
+
                         <h2>
 
                             Special<br>
 
-                            <em>Privilege</em>
+                            <em>
+                                Privilege
+                            </em>
 
                         </h2>
+
 
                         <div class="promo-big">
 
                             FREE SHIPPING
 
                         </div>
+
 
                         <p class="promo-detail">
 
@@ -3038,13 +3106,16 @@ footer a:hover{
 
                         </p>
 
+
                         <div class="promo-code">
 
                             ✦ ORDER $50+ • FREE SHIPPING ✦
 
                         </div>
 
+
                         <br>
+
 
                         <a
                             href="products.php"
@@ -3053,11 +3124,10 @@ footer a:hover{
 
                             ช้อปสินค้า
 
-                            <i
-                                class="fa-solid fa-arrow-right"
-                            ></i>
+                            <i class="fa-solid fa-arrow-right"></i>
 
                         </a>
+
 
                     </div>
 
@@ -3070,14 +3140,14 @@ footer a:hover{
                  AD 3
             ================================================== -->
 
-            <div
-                class="veloura-ad-slide"
-            >
+            <div class="veloura-ad-slide">
+
 
                 <div class="ad-new-product">
 
 
                     <div class="ad-new-image">
+
 
                         <div class="new-label">
 
@@ -3085,12 +3155,11 @@ footer a:hover{
 
                         </div>
 
+
                         <img
                             src="<?= htmlspecialchars($new_product_image) ?>"
                             alt="<?= htmlspecialchars($new_product_name) ?>"
-                            onerror="
-                                this.src='images/perfume-hero.jpg';
-                            "
+                            onerror="this.src='images/perfume-hero.jpg';"
                         >
 
                     </div>
@@ -3098,41 +3167,42 @@ footer a:hover{
 
                     <div class="ad-new-content">
 
+
                         <div class="ad-kicker">
 
                             VELOURA NEW COLLECTION
 
                         </div>
 
+
                         <h2>
 
                             Meet<br>
 
-                            <em>the New Scent</em>
+                            <em>
+                                the New Scent
+                            </em>
 
                         </h2>
 
+
                         <div class="ad-new-name">
 
-                            <?= htmlspecialchars(
-                                $new_product_name
-                            ) ?>
+                            <?= htmlspecialchars($new_product_name) ?>
 
                         </div>
 
+
                         <p class="ad-new-description">
 
-                            <?= htmlspecialchars(
-                                $new_product_description
-                            ) ?>
+                            <?= htmlspecialchars($new_product_description) ?>
 
                         </p>
 
+
                         <div class="ad-new-price">
 
-                            <?= htmlspecialchars(
-                                $new_product_price
-                            ) ?>
+                            <?= htmlspecialchars($new_product_price) ?>
 
                         </div>
 
@@ -3146,9 +3216,7 @@ footer a:hover{
 
                                 ดูสินค้าใหม่
 
-                                <i
-                                    class="fa-solid fa-arrow-right"
-                                ></i>
+                                <i class="fa-solid fa-arrow-right"></i>
 
                             </a>
 
@@ -3161,9 +3229,7 @@ footer a:hover{
 
                                 ดูสินค้าทั้งหมด
 
-                                <i
-                                    class="fa-solid fa-arrow-right"
-                                ></i>
+                                <i class="fa-solid fa-arrow-right"></i>
 
                             </a>
 
@@ -3189,9 +3255,7 @@ footer a:hover{
             aria-label="โฆษณาก่อนหน้า"
         >
 
-            <i
-                class="fa-solid fa-chevron-left"
-            ></i>
+            <i class="fa-solid fa-chevron-left"></i>
 
         </button>
 
@@ -3205,9 +3269,7 @@ footer a:hover{
             aria-label="โฆษณาถัดไป"
         >
 
-            <i
-                class="fa-solid fa-chevron-right"
-            ></i>
+            <i class="fa-solid fa-chevron-right"></i>
 
         </button>
 
@@ -3216,12 +3278,14 @@ footer a:hover{
 
         <div class="ad-controls">
 
+
             <button
                 type="button"
                 class="ad-dot active"
                 data-slide="0"
                 aria-label="โฆษณาที่ 1"
             ></button>
+
 
             <button
                 type="button"
@@ -3230,12 +3294,14 @@ footer a:hover{
                 aria-label="โฆษณาที่ 2"
             ></button>
 
+
             <button
                 type="button"
                 class="ad-dot"
                 data-slide="2"
                 aria-label="โฆษณาที่ 3"
             ></button>
+
 
         </div>
 
@@ -3263,12 +3329,19 @@ footer a:hover{
 >
 
     <span>✦</span>
+
     <span>✧</span>
+
     <span>⋆</span>
+
     <span>✦</span>
+
     <span>✧</span>
+
     <span>⋆</span>
+
     <span>✦</span>
+
     <span>✧</span>
 
 </div>
@@ -3281,7 +3354,9 @@ footer a:hover{
 <div class="top-bar">
 
     ✦ จัดส่งฟรี เมื่อสั่งซื้อครบ $50
+
     &nbsp; • &nbsp;
+
     LUXURY FRAGRANCE FOR EVERY MOMENT ✦
 
 </div>
@@ -3312,6 +3387,7 @@ footer a:hover{
 
     <div class="nav-links">
 
+
         <a
             href="index.php"
             class="active"
@@ -3319,43 +3395,49 @@ footer a:hover{
             หน้าแรก
         </a>
 
+
         <a href="products.php">
             สินค้า
         </a>
+
 
         <a href="about.php">
             เกี่ยวกับเรา
         </a>
 
+
         <a href="collection.php">
             คอลเลกชัน
         </a>
+
 
         <a href="find-scent.php">
             ค้นหากลิ่น
         </a>
 
+
         <a href="contact.php">
             ติดต่อเรา
         </a>
+
 
     </div>
 
 
     <div class="nav-right">
 
+
         <a href="profile.php">
             บัญชี
         </a>
+
 
         <a
             href="cart.php"
             class="cart"
         >
 
-            <i
-                class="fa-solid fa-bag-shopping"
-            ></i>
+            <i class="fa-solid fa-bag-shopping"></i>
 
 
             <?php if ($cart_count > 0): ?>
@@ -3368,9 +3450,12 @@ footer a:hover{
 
             <?php endif; ?>
 
+
         </a>
 
+
     </div>
+
 
 </nav>
 
@@ -3384,10 +3469,12 @@ footer a:hover{
 
     <div class="hero-image">
 
+
         <img
             src="images/perfume-hero.jpg"
             alt="Veloura Luxury Perfume"
         >
+
 
     </div>
 
@@ -3406,7 +3493,9 @@ footer a:hover{
 
             กลิ่นหอมที่<br>
 
-            <em>เป็นตัวคุณ</em>
+            <em>
+                เป็นตัวคุณ
+            </em>
 
         </h1>
 
@@ -3429,9 +3518,7 @@ footer a:hover{
 
             เลือกซื้อน้ำหอม
 
-            <i
-                class="fa-solid fa-arrow-right"
-            ></i>
+            <i class="fa-solid fa-arrow-right"></i>
 
         </a>
 
@@ -3492,10 +3579,7 @@ footer a:hover{
         <?php if (count($featured_products) > 0): ?>
 
 
-            <?php foreach (
-                $featured_products
-                as $index => $product
-            ): ?>
+            <?php foreach ($featured_products as $index => $product): ?>
 
 
                 <a
@@ -3529,34 +3613,26 @@ footer a:hover{
                         <img
                             src="<?= htmlspecialchars($product['image']) ?>"
                             alt="<?= htmlspecialchars($product['name']) ?>"
-                            onerror="
-                                this.src='images/perfume-hero.jpg';
-                            "
+                            onerror="this.src='images/perfume-hero.jpg';"
                         >
+
 
                     </div>
 
+
+                    <!-- =================================================
+                         PRODUCT INFO
+                         แสดงเฉพาะชื่อ + ราคา
+                    ================================================== -->
 
                     <div class="product-info">
 
 
                         <h3>
 
-                            <?= htmlspecialchars(
-                                $product['name']
-                            ) ?>
+                            <?= htmlspecialchars($product['name']) ?>
 
                         </h3>
-
-
-                        <p>
-
-                            <?= htmlspecialchars(
-                                $product['description']
-                                ?: 'น้ำหอม Eau de Parfum'
-                            ) ?>
-
-                        </p>
 
 
                         <div class="product-bottom">
@@ -3570,13 +3646,6 @@ footer a:hover{
                                     (float)$product['price'],
                                     2
                                 ) ?>
-
-                            </span>
-
-
-                            <span class="view-product">
-
-                                VIEW DETAILS ✦
 
                             </span>
 
@@ -3669,22 +3738,27 @@ footer a:hover{
 
             <span class="button-icon">
 
-                <i
-                    class="fa-regular fa-envelope"
-                ></i>
+                <i class="fa-regular fa-envelope"></i>
 
             </span>
 
 
             <span>
 
+
                 <strong>
+
                     สมัครรับข่าวสาร
+
                 </strong>
 
+
                 <small>
+
                     VELOURA NEWSLETTER
+
                 </small>
+
 
             </span>
 
@@ -3780,7 +3854,9 @@ footer a:hover{
             <p>
 
                 Luxury fragrance crafted for those
+
                 <br>
+
                 who embrace their individuality.
 
             </p>
@@ -3793,24 +3869,37 @@ footer a:hover{
 
 
             <h3>
+
                 เมนู
+
             </h3>
 
 
             <a href="index.php">
+
                 หน้าแรก
+
             </a>
+
 
             <a href="products.php">
+
                 สินค้า
+
             </a>
+
 
             <a href="about.php">
+
                 เกี่ยวกับเรา
+
             </a>
 
+
             <a href="collection.php">
+
                 คอลเลกชัน
+
             </a>
 
 
@@ -3821,24 +3910,37 @@ footer a:hover{
 
 
             <h3>
+
                 บริการ
+
             </h3>
 
 
             <a href="find-scent.php">
+
                 ค้นหากลิ่น
+
             </a>
+
 
             <a href="contact.php">
+
                 ติดต่อเรา
+
             </a>
+
 
             <a href="profile.php">
+
                 บัญชีของฉัน
+
             </a>
 
+
             <a href="cart.php">
+
                 รถเข็น
+
             </a>
 
 
@@ -3877,30 +3979,36 @@ document.addEventListener(
                 "velouraAd"
             );
 
+
         const closeAd =
             document.getElementById(
                 "closeVelouraAd"
             );
+
 
         const slides =
             document.querySelectorAll(
                 ".veloura-ad-slide"
             );
 
+
         const dots =
             document.querySelectorAll(
                 ".ad-dot"
             );
+
 
         const prev =
             document.getElementById(
                 "adPrev"
             );
 
+
         const next =
             document.getElementById(
                 "adNext"
             );
+
 
         const progress =
             document.getElementById(
@@ -3932,6 +4040,7 @@ document.addEventListener(
 
         function showSlide(index){
 
+
             if(index < 0){
 
                 index =
@@ -3939,9 +4048,8 @@ document.addEventListener(
 
             }
 
-            if(
-                index >= slides.length
-            ){
+
+            if(index >= slides.length){
 
                 index = 0;
 
@@ -3970,22 +4078,24 @@ document.addEventListener(
             );
 
 
-            slides[index]
-                .classList
-                .add("active");
+            slides[index].classList.add(
+                "active"
+            );
 
 
             if(dots[index]){
 
-                dots[index]
-                    .classList
-                    .add("active");
+                dots[index].classList.add(
+                    "active"
+                );
 
             }
 
 
             currentSlide = index;
 
+
+            /* Progress bar */
 
             if(progress){
 
@@ -3997,7 +4107,8 @@ document.addEventListener(
                         *
                         100
                     )
-                    + "%";
+                    +
+                    "%";
 
             }
 
@@ -4108,6 +4219,7 @@ document.addEventListener(
                                 )
                             );
 
+
                         showSlide(index);
 
                         restartAutoSlide();
@@ -4203,7 +4315,7 @@ document.addEventListener(
 
 
         /* =================================================
-           TOUCH / SWIPE
+           TOUCH / SWIPE MOBILE
         ================================================= */
 
         let touchStartX = 0;
@@ -4216,8 +4328,7 @@ document.addEventListener(
             function(event){
 
                 touchStartX =
-                    event
-                        .changedTouches[0]
+                    event.changedTouches[0]
                         .screenX;
 
             },
@@ -4232,8 +4343,7 @@ document.addEventListener(
             function(event){
 
                 touchEndX =
-                    event
-                        .changedTouches[0]
+                    event.changedTouches[0]
                         .screenX;
 
 
@@ -4255,8 +4365,7 @@ document.addEventListener(
 
                     nextSlide();
 
-                }
-                else{
+                }else{
 
                     prevSlide();
 
@@ -4270,7 +4379,7 @@ document.addEventListener(
 
 
         /* =================================================
-           SHOW ONCE PER SESSION
+           แสดง Popup แค่ครั้งเดียวต่อ Session
         ================================================= */
 
         if(
@@ -4288,7 +4397,7 @@ document.addEventListener(
 
 
         /* =================================================
-           START
+           เริ่ม Slider
         ================================================= */
 
         showSlide(0);
