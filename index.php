@@ -1542,6 +1542,148 @@ footer{
     margin-bottom:25px;
 }
 
+/* =====================================================
+   PREMIUM MULTI-AD POLISH
+===================================================== */
+
+.popup {
+    border: 1px solid rgba(255,255,255,.72);
+    border-radius: 18px;
+}
+
+.popup-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.popup-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(56,25,38,.08), rgba(56,25,38,.42));
+    pointer-events: none;
+}
+
+.popup-slide:nth-child(2) .popup-image::after {
+    background: linear-gradient(135deg, rgba(116,64,82,.08), rgba(116,64,82,.48));
+}
+
+.popup-slide:nth-child(3) .popup-image::after {
+    background: linear-gradient(135deg, rgba(70,48,40,.08), rgba(70,48,40,.48));
+}
+
+.popup-slide:nth-child(4) .popup-image::after {
+    background: linear-gradient(135deg, rgba(42,61,58,.06), rgba(42,61,58,.42));
+}
+
+.popup-slide:nth-child(5) .popup-image::after {
+    background: linear-gradient(135deg, rgba(93,62,42,.06), rgba(93,62,42,.46));
+}
+
+.popup-slide:nth-child(6) .popup-image::after {
+    background: linear-gradient(135deg, rgba(62,45,54,.08), rgba(62,45,54,.50));
+}
+
+.popup-image img {
+    transition: transform .8s ease;
+}
+
+.popup-slide:hover .popup-image img {
+    transform: scale(1.045);
+}
+
+.ad-badge {
+    position: absolute;
+    left: 20px;
+    bottom: 18px;
+    z-index: 2;
+    padding: 8px 12px;
+    border: 1px solid rgba(255,255,255,.45);
+    background: rgba(43,25,33,.28);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.popup-content {
+    position: relative;
+    background: linear-gradient(180deg, #fffdfd 0%, #fff7fa 100%);
+}
+
+.popup-content::before {
+    content: "✦";
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    color: rgba(173,108,129,.42);
+    font-size: 18px;
+}
+
+.popup-content h2 {
+    letter-spacing: -.5px;
+}
+
+.popup-btn {
+    border: 1px solid #704052;
+    border-radius: 999px;
+    transition: all .25s ease;
+    box-shadow: 0 8px 18px rgba(112,64,82,.12);
+}
+
+.popup-btn:hover {
+    background: #fff;
+    color: #704052;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(112,64,82,.16);
+}
+
+.popup-btn i {
+    margin-left: 7px;
+    font-size: 9px;
+}
+
+.popup-dot {
+    transition: all .25s ease;
+    cursor: pointer;
+}
+
+.popup-dot.active {
+    width: 22px;
+    border-radius: 999px;
+}
+
+.popup-close {
+    border: 1px solid rgba(112,64,82,.10);
+    box-shadow: 0 5px 18px rgba(60,30,40,.08);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.popup-close:hover {
+    transform: rotate(90deg);
+    background: #fff;
+}
+
+@media (max-width: 700px) {
+    .popup {
+        max-width: 430px;
+        border-radius: 14px;
+    }
+
+    .popup-image {
+        min-height: 250px;
+    }
+
+    .popup-content {
+        padding: 38px 28px 48px;
+    }
+
+    .popup-content h2 {
+        font-size: 39px;
+    }
+}
+
 .popup-btn{
 
     display:inline-block;
@@ -2634,241 +2776,116 @@ footer{
 
 
 <!-- =====================================================
-     POPUP
+     POPUP ADS — VELOURA
 ===================================================== -->
 
-<div
-    class="popup-overlay"
-    id="popupOverlay"
->
-
+<div class="popup-overlay" id="popupOverlay">
 
     <div class="popup">
 
-
-        <button
-            class="popup-close"
-            id="popupClose"
-        >
-
+        <button class="popup-close" id="popupClose" aria-label="ปิดโฆษณา">
             <i class="fa-solid fa-xmark"></i>
-
         </button>
 
-
         <div class="popup-slider">
+            <div class="popup-slides" id="popupSlides">
 
-
-            <div
-                class="popup-slides"
-                id="popupSlides"
-            >
-
-
-                <!-- SLIDE 1 -->
-
+                <!-- AD 1 : BRAND -->
                 <div class="popup-slide">
-
-
                     <div class="popup-image">
-
-                        <img
-                            src="images/perfume-hero.jpg"
-                            alt="VELOURA"
-                        >
-
+                        <img src="images/perfume-hero.jpg" alt="VELOURA Signature Perfume">
+                        <span class="ad-badge">01 / SIGNATURE</span>
                     </div>
-
-
                     <div class="popup-content">
-
-
-                        <small>
-
-                            WELCOME TO VELOURA
-
-                        </small>
-
-
-                        <h2>
-
-                            Find Your<br>
-                            Signature
-
-                        </h2>
-
-
-                        <p>
-
-                            ค้นพบกลิ่นหอมที่เป็นตัวคุณ
-                            และเลือกน้ำหอมที่เหมาะกับสไตล์ของคุณ
-
-                        </p>
-
-
-                        <a
-                            href="products.php"
-                            class="popup-btn"
-                        >
-
-                            SHOP NOW
-
-                        </a>
-
-
+                        <small>WELCOME TO VELOURA</small>
+                        <h2>Find Your<br>Signature</h2>
+                        <p>ค้นพบกลิ่นหอมที่สะท้อนตัวตนของคุณ ตั้งแต่ความละมุน ไปจนถึงความโดดเด่นในแบบที่เป็นคุณ</p>
+                        <a href="products.php" class="popup-btn">SHOP PERFUMES <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-
-
                 </div>
 
-
-                <!-- SLIDE 2 -->
-
+                <!-- AD 2 : SCENT QUIZ -->
                 <div class="popup-slide">
-
-
                     <div class="popup-image">
-
-                        <img
-                            src="images/perfume-hero.jpg"
-                            alt="VELOURA COLLECTION"
-                        >
-
+                        <img src="images/perfume-hero.jpg" alt="Find Your Scent at Veloura">
+                        <span class="ad-badge">02 / SCENT MATCH</span>
                     </div>
-
-
                     <div class="popup-content">
-
-
-                        <small>
-
-                            EXPLORE OUR COLLECTION
-
-                        </small>
-
-
-                        <h2>
-
-                            Your Scent,<br>
-                            Your Story
-
-                        </h2>
-
-
-                        <p>
-
-                            เลือกกลิ่นที่บอกเล่าเรื่องราว
-                            และความเป็นตัวคุณในทุกช่วงเวลา
-
-                        </p>
-
-
-                        <a
-                            href="find-scent.php"
-                            class="popup-btn"
-                        >
-
-                            FIND YOUR SCENT
-
-                        </a>
-
-
+                        <small>YOUR SCENT, YOUR STORY</small>
+                        <h2>Which Scent<br>Is You?</h2>
+                        <p>ยังไม่รู้ว่าควรเลือกกลิ่นไหน? ให้ VELOURA ช่วยค้นหาคาแรกเตอร์ของคุณ แล้วเลือกกลิ่นที่ใช่ในไม่กี่ขั้นตอน</p>
+                        <a href="find-scent.php" class="popup-btn">FIND MY SCENT <i class="fa-solid fa-sparkles"></i></a>
                     </div>
-
-
                 </div>
 
-
-                <!-- SLIDE 3 -->
-
+                <!-- AD 3 : COLLECTION -->
                 <div class="popup-slide">
-
-
                     <div class="popup-image">
-
-                        <img
-                            src="images/perfume-hero.jpg"
-                            alt="VELOURA"
-                        >
-
+                        <img src="images/perfume-hero.jpg" alt="Veloura Perfume Collection">
+                        <span class="ad-badge">03 / COLLECTION</span>
                     </div>
-
-
                     <div class="popup-content">
-
-
-                        <small>
-
-                            DISCOVER VELOURA
-
-                        </small>
-
-
-                        <h2>
-
-                            Elegance<br>
-                            in Every Drop
-
-                        </h2>
-
-
-                        <p>
-
-                            สัมผัสความหรูหรา
-                            ผ่านกลิ่นหอมที่ถูกออกแบบอย่างพิถีพิถัน
-
-                        </p>
-
-
-                        <a
-                            href="about.php"
-                            class="popup-btn"
-                        >
-
-                            DISCOVER MORE
-
-                        </a>
-
-
+                        <small>THE VELOURA COLLECTION</small>
+                        <h2>Elegance<br>in Every Drop</h2>
+                        <p>เลือกชมคอลเลกชันน้ำหอมของ VELOURA ที่ออกแบบให้แต่ละกลิ่นมีบุคลิกและเรื่องราวที่แตกต่างกัน</p>
+                        <a href="collection.php" class="popup-btn">EXPLORE COLLECTION <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-
-
                 </div>
 
+                <!-- AD 4 : NEW ARRIVAL -->
+                <div class="popup-slide">
+                    <div class="popup-image">
+                        <img src="images/perfume-hero.jpg" alt="Veloura New Arrival">
+                        <span class="ad-badge">04 / NEW ARRIVAL</span>
+                    </div>
+                    <div class="popup-content">
+                        <small>JUST ARRIVED</small>
+                        <h2>A New Chapter<br>of Scent</h2>
+                        <p>เปิดประสบการณ์ใหม่กับน้ำหอมที่คัดสรรมาเพื่อเติมความสดใหม่ให้ทุกวันของคุณน่าจดจำยิ่งขึ้น</p>
+                        <a href="products.php" class="popup-btn">DISCOVER NEW <i class="fa-solid fa-bottle-droplet"></i></a>
+                    </div>
+                </div>
+
+                <!-- AD 5 : GIFT -->
+                <div class="popup-slide">
+                    <div class="popup-image">
+                        <img src="images/perfume-hero.jpg" alt="Veloura Perfume Gift">
+                        <span class="ad-badge">05 / GIFT EDIT</span>
+                    </div>
+                    <div class="popup-content">
+                        <small>A LITTLE LUXURY</small>
+                        <h2>Give a Scent<br>They Remember</h2>
+                        <p>มอบความรู้สึกดี ๆ ผ่านกลิ่นหอม เลือกน้ำหอมที่เหมาะสำหรับคนพิเศษ หรือเติมความหรูให้วันธรรมดา</p>
+                        <a href="products.php" class="popup-btn">SHOP GIFT PICKS <i class="fa-solid fa-gift"></i></a>
+                    </div>
+                </div>
+
+                <!-- AD 6 : ABOUT BRAND -->
+                <div class="popup-slide">
+                    <div class="popup-image">
+                        <img src="images/perfume-hero.jpg" alt="About Veloura Perfumes">
+                        <span class="ad-badge">06 / THE STORY</span>
+                    </div>
+                    <div class="popup-content">
+                        <small>BEHIND THE FRAGRANCE</small>
+                        <h2>The Art<br>of Veloura</h2>
+                        <p>ทำความรู้จักแนวคิดและตัวตนของ VELOURA แบรนด์น้ำหอมที่เชื่อว่ากลิ่นหอมคือความทรงจำที่ติดตัวเราไป</p>
+                        <a href="about.php" class="popup-btn">OUR STORY <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
 
             </div>
 
-
-            <div class="popup-dots">
-
-
-                <span
-                    class="popup-dot active"
-                    data-slide="0"
-                ></span>
-
-
-                <span
-                    class="popup-dot"
-                    data-slide="1"
-                ></span>
-
-
-                <span
-                    class="popup-dot"
-                    data-slide="2"
-                ></span>
-
-
+            <div class="popup-dots" aria-label="เลือกโฆษณา">
+                <span class="popup-dot active" data-slide="0"></span>
+                <span class="popup-dot" data-slide="1"></span>
+                <span class="popup-dot" data-slide="2"></span>
+                <span class="popup-dot" data-slide="3"></span>
+                <span class="popup-dot" data-slide="4"></span>
+                <span class="popup-dot" data-slide="5"></span>
             </div>
-
-
         </div>
-
-
     </div>
-
-
 </div>
 
 
@@ -2880,154 +2897,72 @@ footer{
 
 
 /* =====================================================
-   POPUP
+   POPUP ADS
 ===================================================== */
 
-const popupOverlay =
-    document.getElementById(
-        "popupOverlay"
-    );
-
-const popupClose =
-    document.getElementById(
-        "popupClose"
-    );
-
-const popupSlides =
-    document.getElementById(
-        "popupSlides"
-    );
-
-const popupDots =
-    document.querySelectorAll(
-        ".popup-dot"
-    );
+const popupOverlay = document.getElementById("popupOverlay");
+const popupClose = document.getElementById("popupClose");
+const popupSlides = document.getElementById("popupSlides");
+const popupDots = document.querySelectorAll(".popup-dot");
 
 let currentSlide = 0;
-
-
-/* เปลี่ยน Slide */
+let popupTimer = null;
 
 function showSlide(index){
-
-    currentSlide = index;
+    currentSlide = (index + popupDots.length) % popupDots.length;
 
     popupSlides.style.transform =
-        "translateX(-" +
-        (index * 100) +
-        "%)";
+        "translateX(-" + (currentSlide * 100) + "%)";
 
-    popupDots.forEach(
-        (dot,i) => {
-
-            dot.classList.toggle(
-                "active",
-                i === index
-            );
-
-        }
-    );
-
+    popupDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentSlide);
+    });
 }
 
-
-/* กดจุด Slide */
-
-popupDots.forEach(
-    dot => {
-
-        dot.addEventListener(
-            "click",
-            function(){
-
-                showSlide(
-                    parseInt(
-                        this.dataset.slide
-                    )
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* ปิด Popup */
-
-popupClose.addEventListener(
-    "click",
-    function(){
-
-        popupOverlay.classList.remove(
-            "show"
-        );
-
-        sessionStorage.setItem(
-            "veloura_popup_closed",
-            "1"
-        );
-
-    }
-);
-
-
-/* คลิกพื้นหลังเพื่อปิด */
-
-popupOverlay.addEventListener(
-    "click",
-    function(e){
-
-        if(
-            e.target ===
-            popupOverlay
-        ){
-
-            popupOverlay.classList.remove(
-                "show"
-            );
-
-            sessionStorage.setItem(
-                "veloura_popup_closed",
-                "1"
-            );
-
+function startPopupAutoPlay(){
+    clearInterval(popupTimer);
+    popupTimer = setInterval(() => {
+        if (popupOverlay.classList.contains("show")) {
+            showSlide(currentSlide + 1);
         }
+    }, 5500);
+}
 
+popupDots.forEach(dot => {
+    dot.addEventListener("click", function(){
+        showSlide(parseInt(this.dataset.slide, 10));
+        startPopupAutoPlay();
+    });
+});
+
+popupClose.addEventListener("click", function(){
+    popupOverlay.classList.remove("show");
+    clearInterval(popupTimer);
+    sessionStorage.setItem("veloura_popup_closed", "1");
+});
+
+popupOverlay.addEventListener("click", function(e){
+    if (e.target === popupOverlay) {
+        popupOverlay.classList.remove("show");
+        clearInterval(popupTimer);
+        sessionStorage.setItem("veloura_popup_closed", "1");
     }
-);
+});
 
+popupSlides.addEventListener("mouseenter", () => clearInterval(popupTimer));
+popupSlides.addEventListener("mouseleave", startPopupAutoPlay);
 
-/* =====================================================
-   แสดง Popup ครั้งแรก
-===================================================== */
+window.addEventListener("load", function(){
+    const popupClosed = sessionStorage.getItem("veloura_popup_closed");
 
-window.addEventListener(
-    "load",
-    function(){
-
-        const popupClosed =
-            sessionStorage.getItem(
-                "veloura_popup_closed"
-            );
-
-        if(!popupClosed){
-
-            setTimeout(
-                function(){
-
-                    popupOverlay.classList.add(
-                        "show"
-                    );
-
-                },
-                1000
-            );
-
-        }
-
+    if (!popupClosed) {
+        setTimeout(function(){
+            showSlide(0);
+            popupOverlay.classList.add("show");
+            startPopupAutoPlay();
+        }, 1000);
     }
-);
+});
 
 </script>
 
