@@ -2000,15 +2000,19 @@ footer{
             </a>
 
             <a href="products.php">
-                คอลเลกชัน
-            </a>
-
-            <a href="quiz.php">
-                ค้นหากลิ่น
+                สินค้า
             </a>
 
             <a href="about.php">
                 เกี่ยวกับเรา
+            </a>
+
+            <a href="collection.php">
+                คอลเลกชัน
+            </a>
+
+            <a href="find-scent.php">
+                ค้นหากลิ่น
             </a>
 
             <a href="contact.php">
@@ -2760,7 +2764,7 @@ footer{
 
 
                         <a
-                            href="quiz.php"
+                            href="find-scent.php"
                             class="popup-btn"
                         >
 
